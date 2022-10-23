@@ -1,0 +1,42 @@
+.step {
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shade);
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin: 1rem 0rem;
+}
+.step {
+  @apply text-2xl;
+}
+.stepInfo {
+  margin-right: 0.75em;
+  min-width: 0px;
+  flex: 1 1 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detail {
+  width: 80px;
+  font-weight: 600;
+}
+
+.edit {
+  background: transparent;
+  border: none;
+  transition: background 0.2s ease-in;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.edit:hover {
+  background: var(--logo-color-100);
+}
+.container {
+  /* height: calc(100vh - 7rem); */
+}

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.flexy {
+  @apply flex flex-row justify-around w-screen max-w-7xl h-28 mt-11;
+}
+.flexy img {
+  @apply w-48 m-0;
+}
+.column {
+  @apply flex flex-col list-none mt-5;
+}
+.column h4 {
+  @apply font-black mt-4;
+}
+.column img {
+  @apply w-32;
+}
+@media (max-width: 1090px) {
+  .main {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}

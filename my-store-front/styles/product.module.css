@@ -1,0 +1,147 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  /* min-height: 100vh; */
+  display: flex;
+}
+.container {
+  @apply text-2xl text-secondary;
+}
+.container h1 {
+  @apply text-7xl;
+}
+.image {
+  width: 60%;
+  /* height: 100vh; */
+  margin: 0;
+}
+
+.placeholder {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.placeholder {
+  @apply bg-no-repeat bg-cover rounded-tr-3xl;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 3rem;
+}
+
+.return {
+  display: flex;
+  align-items: center;
+}
+
+.return svg {
+  margin-right: 0.7rem;
+}
+.price {
+  @apply text-6xl bg-primary p-3 w-max rounded-md;
+}
+/* .sizebtn {
+  padding: 0.7rem;
+  border: none;
+  background: lightgrey;
+  border-radius: 2px;
+  min-height: 38px;
+  min-width: 38px;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.sizebtn:hover {
+  filter: brightness(0.9);
+} */
+
+.selected {
+  background: var(--logo-color-900);
+  color: white;
+}
+
+.ticker {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+}
+
+.selection {
+  margin: 2rem 0;
+}
+
+.selection p {
+  margin: 0;
+  margin-bottom: 0.7rem;
+}
+
+.qtybtn {
+  height: 38px;
+  width: 38px;
+  border: none;
+  background: none;
+  transition: all 0.2s ease-in;
+  border-radius: 2px;
+}
+
+.qtybtn:hover,
+.qtybtn:focus {
+  background: var(--logo-color-100);
+}
+.title h1 {
+  @apply text-5xl;
+}
+
+.addbtn {
+  @apply bg-primary text-secondary text-3xl flex flex-row justify-between p-5 rounded-md transition-all;
+}
+.addbtn svg {
+  margin-left: 0.7rem;
+}
+
+.addbtn:hover {
+  @apply scale-105 brightness-125;
+}
+
+.tabs {
+  margin-top: 2rem;
+  max-width: 500px;
+}
+
+.tabtitle {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: var(--fz-m);
+  border-bottom: 1px solid var(--logo-color-400);
+}
+
+@media (max-width: 876px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image,
+  .info {
+    width: 100%;
+  }
+
+  .image {
+    height: 50vh;
+  }
+
+  .info {
+    margin-top: 1rem;
+    padding: 0 22px;
+  }
+}
