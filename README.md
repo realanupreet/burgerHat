@@ -35,7 +35,7 @@ Here are the steps to be taken after that:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AniqJaved/bakeryshop.git
+   git clone https://github.com/realanupreet/burgerHat.git
    ```
 2. Change directory:
    ```bash
