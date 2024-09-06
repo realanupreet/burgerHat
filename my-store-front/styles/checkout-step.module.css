@@ -41,6 +41,7 @@
   display: none;
   justify-self: flex-end;
   background: transparent;
+  @apply bg-primary text-white text-xl;
 }
 
 .orderBtn:hover {

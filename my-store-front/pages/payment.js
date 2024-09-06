@@ -63,14 +63,14 @@ export const Payment = () => {
                       passHref
                     >
 
-                      <div className={itemStyles.placeholder}>
-                        <Image
-                          objectFit="cover"
-                          height="100%"
-                          width="100%"
-                          src={i.variant.product.thumbnail}
-                          alt={`${i.title}`}
-                        />
+                      <div
+                        className={ itemStyles.placeholder }
+                        style={{
+                          backgroundImage: `url(${i.variant.product.thumbnail})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        } }
+                      >
                       </div>
 
                     </Link>

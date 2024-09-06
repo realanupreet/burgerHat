@@ -48,12 +48,6 @@ export default function Home({ products }) {
                         target="_blank">
 
                         <div className={store.imgHolder}>
-                          {/* <Image
-                            src={p.thumbnail}
-                            alt="thumbnail"
-                            width={300}
-                            height={300}
-                          ></Image> */}
                           <div
                             className={store.imgdiv}
                             style={{
