@@ -1,21 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-import { AiFillCaretDown } from "react-icons/ai";
-import { FaGithub } from "react-icons/fa";
 import StoreContext from "../context/store-context";
 import MedusaLogo from "../public/BurgerHat.PNG";
-import BakeryBanner from "../public/banner.JPG";
 import Banner from "../public/banner.SVG";
 import BurgerHands from "../public/burgerbanner.PNG";
-import ChocolateSplash from "../public/chocolatesplash.PNG";
-import field from "../public/fieldSvg.svg";
 import styles from "../styles/landing-page.module.css";
 import store from "../styles/store.module.css";
 import footer from "../styles/footer.module.css";
 import { createClient } from "../utils/client";
 import { formatPrices } from "../utils/prices";
-import Condiments from "../public/condiments.PNG";
 
 export default function Home({ products }) {
   const { cart } = useContext(StoreContext);
