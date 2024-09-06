@@ -10,23 +10,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@medusajs/medusa-js": "^1.0.3",
-    "@stripe/react-stripe-js": "^1.4.1",
-    "@stripe/stripe-js": "^1.15.1",
-    "axios": "^0.21.3",
-    "formik": "^2.2.9",
-    "next": "^11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.2.0",
-    "react-spinners": "^0.11.0",
-    "yup": "^0.32.9"
+    "@medusajs/medusa-js": "^6.1.9",
+    "@stripe/react-stripe-js": "^2.8.0",
+    "@stripe/stripe-js": "^4.4.0",
+    "axios": "^1.7.7",
+    "formik": "^2.4.6",
+    "next": "^14.2.8",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "^5.3.0",
+    "react-spinners": "^0.14.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "eslint": "7.29.0",
-    "eslint-config-next": "11.0.0",
-    "postcss": "^8.4.18",
-    "tailwindcss": "^3.2.1"
+    "autoprefixer": "^10.4.20",
+    "eslint": "9.9.1",
+    "eslint-config-next": "14.2.8",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10"
   }
 }
