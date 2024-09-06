@@ -19,7 +19,7 @@ export default function Home({ products }) {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div className={styles.logo}>
-            <Image src={Banner} className={styles.logo}></Image>
+            <Image src={Banner} className={styles.logo} alt="banner" ></Image>
           </div>
 
           <p>The best burgers in town</p>
@@ -45,34 +45,33 @@ export default function Home({ products }) {
                           query: { id: p.id },
                         }}
                         passHref
-                      >
-                        <a target="_blank">
-                          <div className={store.imgHolder}>
-                            {/* <Image
-                              src={p.thumbnail}
-                              alt="thumbnail"
-                              width={300}
-                              height={300}
-                            ></Image> */}
-                            <div
-                              className={store.imgdiv}
-                              style={{
-                                backgroundImage: `url(${p.thumbnail})`,
-                                width: "100%",
-                                height: "100%",
-                              }}
-                            ></div>
-                          </div>
-                          <div className={store.pricenbutton}>
-                            <p className={store.price}>
-                              {formatPrices(cart, p.variants[0])}
-                            </p>
-                            <button>Add to cart</button>
-                          </div>
+                        target="_blank">
 
-                          <h2 className={store.cardtitle}>{p.title}</h2>
-                          {/* <p>{p.description}</p> */}
-                        </a>
+                        <div className={store.imgHolder}>
+                          {/* <Image
+                            src={p.thumbnail}
+                            alt="thumbnail"
+                            width={300}
+                            height={300}
+                          ></Image> */}
+                          <div
+                            className={store.imgdiv}
+                            style={{
+                              backgroundImage: `url(${p.thumbnail})`,
+                              width: "100%",
+                              height: "100%",
+                            }}
+                          ></div>
+                        </div>
+                        <div className={store.pricenbutton}>
+                          <p className={store.price}>
+                            {formatPrices(cart, p.variants[0])}
+                          </p>
+                          <button>Add to cart</button>
+                        </div>
+                        <h2 className={store.cardtitle}>{p.title}</h2>
+                        {/* <p>{p.description}</p> */}
+
                       </Link>
                     </div>
                   );
@@ -85,9 +84,9 @@ export default function Home({ products }) {
         <div className={footer.flexy}>
           <div className={footer.column}>
             <Link href="/">
-              <a>
-                <Image src={MedusaLogo} alt="logo" />
-              </a>
+
+              <Image src={MedusaLogo} alt="logo" />
+
             </Link>
           </div>
           {/* <div className={footer.column}>

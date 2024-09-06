@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
   --logo-color-1000: #30363d;
   --logo-color-900: #454b54;

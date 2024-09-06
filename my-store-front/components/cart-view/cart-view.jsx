@@ -53,17 +53,17 @@ const CartView = () => {
                     }}
                     passHref
                   >
-                    <a>
-                      <div className={styles.placeholder}>
-                        <Image
-                          objectFit="cover"
-                          height="100%"
-                          width="100%"
-                          src={i.variant.product.thumbnail}
-                          alt={`${i.title}`}
-                        />
-                      </div>
-                    </a>
+
+                    <div 
+                      className={styles.placeholder}
+                      style={{
+                        backgroundImage: `url(${i.variant.product.thumbnail})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                    </div>
+
                   </Link>
                 </figure>
                 <div className={styles.controls}>
@@ -76,7 +76,7 @@ const CartView = () => {
                         }}
                         passHref
                       >
-                        <a>{i.title}</a>
+                        {i.title}
                       </Link>
                       {/* <p className={styles.size}>Size: {i.variant.title}</p> */}
                       <p className={styles.size}>

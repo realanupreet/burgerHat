@@ -34,9 +34,9 @@ export const NavBar = () => {
   return (
     <div className={styles.container}>
       <Link href="/">
-        <a>
-          <Image src={MedusaLogo} alt="logo" />
-        </a>
+
+        <Image src={MedusaLogo} alt="logo" />
+
       </Link>
       <div className={styles.navBtnContainer}>
         <div className={styles.navLinks}>
