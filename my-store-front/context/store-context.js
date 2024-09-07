@@ -74,7 +74,7 @@ export const StoreProvider = ({ children }) => {
       // client.carts.create({}).then((data) => {
         dispatch({ type: "setCart", payload: useStaticData("cart") })
         if (localStorage) {
-          localStorage.setItem("cart_id", cart.id)
+          localStorage.setItem("cart_id", cartId)
         }
       // })
     }
