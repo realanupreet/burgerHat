@@ -1,4 +1,4 @@
-# Burger Hat
+# Burger Hat (deployed static site for a quick look)
 
 ![cover](cover.png)
 
