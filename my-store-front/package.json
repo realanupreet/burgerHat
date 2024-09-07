@@ -2,7 +2,7 @@
   "name": "medusa-nextjs-starter",
   "version": "0.1.0",
   "private": true,
-  "author": "Kasper Fabricius Kristensen <kasper@medusa-commmerce.com> (https://www.medusa-commerce.com)",
+  "author": "Anupreet Singh (https://realanupreet.bio.link/)",
   "scripts": {
     "dev": "next dev -p 8000",
     "build": "next build",
