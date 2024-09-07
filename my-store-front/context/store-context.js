@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer, useRef } from "react"
 import { createClient } from "../utils/client"
+import { useStaticData } from "../hooks/useStaticData"
 
 export const defaultStoreContext = {
   adding: false,
@@ -59,137 +60,143 @@ export const StoreProvider = ({ children }) => {
   }, [state.cart])
 
   useEffect(() => {
-    let cartId
+    let cartId = "cart_01GG01EDS3QEYAJMMF9EVC1YH8"
+    // let cartId
     if (localStorage) {
       cartId = localStorage.getItem("cart_id")
     }
 
     if (cartId) {
-      client.carts.retrieve(cartId).then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-      })
+      // client.carts.retrieve(cartId).then((data) => {
+        dispatch({ type: "setCart", payload: useStaticData("cart") })
+      // })
     } else {
-      client.carts.create({}).then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
+      // client.carts.create({}).then((data) => {
+        dispatch({ type: "setCart", payload: useStaticData("cart") })
         if (localStorage) {
-          localStorage.setItem("cart_id", data.cart.id)
+          localStorage.setItem("cart_id", cart.id)
         }
-      })
+      // })
     }
 
-    client.products.list().then((data) => {
-      dispatch({ type: "setProducts", payload: data.products })
-    })
+    // client.products.list().then((data) => {
+      dispatch({ type: "setProducts", payload: useStaticData() })
+    // })
   }, [])
 
   const createCart = () => {
-    if (localStorage) {
-      localStorage.removeItem("cart_id")
-    }
-    client.carts.create({}).then((data) => {
-      dispatch({ type: "setCart", payload: data.cart })
-    })
+    // if (localStorage) {
+    //   localStorage.removeItem("cart_id")
+    // }
+    // client.carts.create({}).then((data) => {
+    //   dispatch({ type: "setCart", payload: data.cart })
+    // })
   }
 
   const setPaymentSession = async (provider) => {
-    return await client.carts
-      .setPaymentSession(state.cart.id, {
-        provider_id: provider
-      })
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-        return data
-      })
+    // return await client.carts
+    //   .setPaymentSession(state.cart.id, {
+    //     provider_id: provider
+    //   })
+    //   .then((data) => {
+    //     dispatch({ type: "setCart", payload: data.cart })
+    //     return data
+    //   })
   }
 
   const addVariantToCart = async ({ variantId, quantity }) => {
-    client.carts.lineItems
-      .create(state.cart.id, {
-        variant_id: variantId,
-        quantity: quantity
-      })
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-      })
+    // const products = useStaticData();
+    // client.carts.lineItems
+    //   .create(state.cart.id, {
+    //     variant_id: variantId,
+    //     quantity: quantity
+    //   })
+    //   .then((data) => {
+    // console.log('state',state);
+    // console.log('products',products);
+    //     dispatch({ type: "setCart", payload: [...state.cart.items] })
+      // })
+    
+      // const product = products.find((p) => p.id === params.id);
   }
 
   const removeLineItem = async (lineId) => {
-    client.carts.lineItems.delete(state.cart.id, lineId).then((data) => {
-      dispatch({ type: "setCart", payload: data.cart })
-    })
+    // client.carts.lineItems.delete(state.cart.id, lineId).then((data) => {
+    //   dispatch({ type: "setCart", payload: data.cart })
+    // })
   }
 
   const updateLineItem = async ({ lineId, quantity }) => {
-    client.carts.lineItems
-      .update(state.cart.id, lineId, { quantity: quantity })
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-      })
+    // client.carts.lineItems
+    //   .update(state.cart.id, lineId, { quantity: quantity })
+    //   .then((data) => {
+    //     dispatch({ type: "setCart", payload: data.cart })
+    //   })
   }
 
   const getShippingOptions = async () => {
-    const data = await client.shippingOptions
-      .listCartOptions(state.cart.id)
-      .then((res) => {
-        return res.shipping_options
-      })
+    // const data = await client.shippingOptions
+    //   .listCartOptions(state.cart.id)
+    //   .then((res) => {
+    //     return res.shipping_options
+    //   })
 
-    if (data) {
-      return data
-    } else {
-      return undefined
-    }
+    // if (data) {
+    //   return data
+    // } else {
+    //   return undefined
+    // }
   }
 
   const setShippingMethod = async (id) => {
-    return await client.carts
-      .addShippingMethod(state.cart.id, {
-        option_id: id
-      })
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-      })
+    // return await client.carts
+    //   .addShippingMethod(state.cart.id, {
+    //     option_id: id
+    //   })
+    //   .then((data) => {
+    //     dispatch({ type: "setCart", payload: data.cart })
+    //   })
   }
 
   const createPaymentSession = async () => {
-    return await client.carts
-      .createPaymentSessions(state.cart.id)
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-        return data
-      })
+    // return await client.carts
+    //   .createPaymentSessions(state.cart.id)
+    //   .then((data) => {
+    //     dispatch({ type: "setCart", payload: data.cart })
+    //     return data
+    //   })
   }
 
   const completeCart = async () => {
-    const data = await client.carts.complete(state.cart.id).then((data) => data)
+    // const data = await client.carts.complete(state.cart.id).then((data) => data)
 
-    if (data) {
-      return data.data
-    } else {
-      return undefined
-    }
+    // if (data) {
+    //   return data.data
+    // } else {
+    //   return undefined
+    // }
   }
 
   const retrieveOrder = async (orderId) => {
-    const data = await client.orders.retrieve(orderId).then((data) => data)
+    // const data = await client.orders.retrieve(orderId).then((data) => data)
 
-    if (data) {
-      return data.order
-    } else {
-      return undefined
-    }
+    // if (data) {
+    //   return data.order
+    // } else {
+    //   return undefined
+    // }
   }
 
   const updateAddress = (address, email) => {
-    client.carts
-      .update(state.cart.id, {
-        shipping_address: address,
-        billing_address: address,
-        email: email
-      })
-      .then((data) => {
-        dispatch({ type: "setCart", payload: data.cart })
-      })
+    // client.carts
+    //   .update(state.cart.id, {
+    //     shipping_address: address,
+    //     billing_address: address,
+    //     email: email
+    //   })
+    //   .then((data) => {
+    //     dispatch({ type: "setCart", payload: data.cart })
+    //   })
   }
 
   return (

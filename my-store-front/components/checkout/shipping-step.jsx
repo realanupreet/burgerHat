@@ -21,9 +21,21 @@ const ShippingStep = ({ handleDeliverySubmit, isProcessing, cart }) => {
       return;
     }
 
-    getShippingOptions().then((partitioned) => {
-      setShippingOptions(partitioned);
-    });
+    // getShippingOptions().then((partitioned) => {
+    //   setShippingOptions(partitioned);
+    // });
+    setShippingOptions([
+      {
+        id: "1",
+        name: "Standard",
+        amount: 0,
+      },
+      {
+        id: "2",
+        name: "Express",
+        option: 10,
+      },
+    ]);
 
     //if method is already selected, then preselect
     if (cart.shipping_methods.length > 0) {
@@ -48,37 +60,37 @@ const ShippingStep = ({ handleDeliverySubmit, isProcessing, cart }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={ styles.container }>
       <h2 className="text-3xl text-secondary py-3">Delivery</h2>
-      {isEmpty(shippingOptions) || isProcessing ? (
+      { isEmpty(shippingOptions) || isProcessing ? (
         <div>loading...</div>
       ) : (
         <div>
-          {shippingOptions.map((so) => {
+          { shippingOptions.map((so) => {
             return (
-              <div key={so.id}>
+              <div key={ so.id }>
                 <ShippingMethod
-                  option={so}
-                  chosen={selectedOption}
-                  handleOption={handleSelectOption}
+                  option={ so }
+                  chosen={ selectedOption }
+                  handleOption={ handleSelectOption }
                 />
               </div>
             );
-          })}
+          }) }
         </div>
-      )}
-      <div className={`${styles.error} ${error ? styles.active : ""} `}>
+      ) }
+      <div className={ `${styles.error} ${error ? styles.active : ""} ` }>
         <MdError />
         <p>Select a shipping method</p>
       </div>
-      <div className={styles.controls}>
+      <div className={ styles.controls }>
         <button
-          className={styles.stepBack}
-          onClick={() => updateCheckoutStep(1)}
+          className={ styles.stepBack }
+          onClick={ () => updateCheckoutStep(1) }
         >
           <BiLeftArrowAlt /> Back to information
         </button>
-        <button className={styles.nextBtn} onClick={handleSubmit}>
+        <button className={ styles.nextBtn } onClick={ handleSubmit }>
           <span id="button-text">Next</span>
         </button>
       </div>

@@ -6,6 +6,7 @@ import { formatPrice, resetOptions } from "../../utils/helper-functions";
 import styles from "../../styles/product.module.css";
 import { createClient } from "../../utils/client";
 import { formatPrices } from "../../utils/prices";
+import { useStaticData } from "../../hooks/useStaticData";
 
 const Product = ({ product }) => {
   const { addVariantToCart, cart } = useContext(StoreContext);
@@ -74,7 +75,7 @@ const Product = ({ product }) => {
             {formatPrices(cart, product.variants[0])}
           </p>
           <div className={styles.selection}>
-            <p>Select Quantity</p>
+            {/* <p>Select Quantity</p>
             <div className={styles.qty}>
               <button
                 className={styles.qtybtn}
@@ -89,10 +90,11 @@ const Product = ({ product }) => {
               >
                 +
               </button>
-            </div>
+            </div> */}
+            <p>{product.description }</p>
           </div>
           <button className={styles.addbtn} onClick={() => handleAddToBag()}>
-            <span>Add to Basket</span>
+            <span>Coming soon</span>
             <BiShoppingBag />
           </button>
           {/* <div className={styles.tabs}>
@@ -110,11 +112,13 @@ const Product = ({ product }) => {
 };
 
 //create a Medusa client
-const client = createClient();
-
+// const client = createClient();
+// 
 export async function getStaticPaths() {
   // Call an external API endpoint to get products
-  const { products } = await client.products.list();
+  // const { products } = await client.products.list();
+  const products = useStaticData();
+
 
   // Get the paths we want to pre-render based on the products
   const paths = products.map((product) => ({
@@ -130,7 +134,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the product `id`.
   // If the route is like /product/prod_1, then params.id is 1
-  const { product } = await client.products.retrieve(params.id);
+  // const { product } = await client.products.retrieve(params.id);
+  const products = useStaticData();
+  const product = products.find((p) => p.id === params.id);
 
   // Pass post data to the page via props
   return { props: { product } };

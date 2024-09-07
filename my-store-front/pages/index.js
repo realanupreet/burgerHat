@@ -10,6 +10,7 @@ import store from "../styles/store.module.css";
 import footer from "../styles/footer.module.css";
 import { createClient } from "../utils/client";
 import { formatPrices } from "../utils/prices";
+import { useStaticData } from "../hooks/useStaticData";
 
 export default function Home({ products }) {
   const { cart } = useContext(StoreContext);
@@ -58,10 +59,10 @@ export default function Home({ products }) {
                           ></div>
                         </div>
                         <div className={store.pricenbutton}>
-                          <p className={store.price}>
+                          <p className={ store.price }>
                             {formatPrices(cart, p.variants[0])}
                           </p>
-                          <button>Add to cart</button>
+                          <button>Take a look</button>
                         </div>
                         <h2 className={store.cardtitle}>{p.title}</h2>
                         {/* <p>{p.description}</p> */}
@@ -94,7 +95,33 @@ export default function Home({ products }) {
 
 export const getStaticProps = async () => {
   const client = createClient();
-  const { products } = await client.products.list();
+  // const { products } = await client.products.list();
+//   let cartId = "cart_01GG01EDS3QEYAJMMF9EVC1YH8"
+//     // if (localStorage) {
+//     //   cartId = localStorage.getItem("cart_id")
+//     // }
+// console.log('cartId',cartId);
+//     if (cartId) {
+//       // console.log('client',client);
+//       client.carts.retrieve(cartId).then((data) => {
+//         console.log('carffdgdg',data);
+//         fs.writeFileSync('local-cart.json', JSON.stringify(data.cart, null, 2));
+
+//         // dispatch({ type: "setCart", payload: data.cart })
+//       })
+//     } else {
+//       // client.carts.create({}).then((data) => {
+//       //   // dispatch({ type: "setCart", payload: data.cart })
+//       //   if (localStorage) {
+//       //     localStorage.setItem("cart_id", data.cart.id)
+//       //   }
+//       // })
+//     }
+
+    // client.products.list().then((data) => {
+      // dispatch({ type: "setProducts", payload: useStaticData() })
+    // })
+  const products = useStaticData();
 
   return {
     props: {
