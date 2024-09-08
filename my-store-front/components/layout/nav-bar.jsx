@@ -6,7 +6,6 @@ import { BiShoppingBag } from "react-icons/bi";
 import { FaHamburger } from "react-icons/fa";
 import DisplayContext from "../../context/display-context";
 import StoreContext from "../../context/store-context";
-import MedusaLogo from "../../public/BurgerHat.PNG";
 import styles from "../../styles/nav-bar.module.css";
 import { quantity, sum } from "../../utils/helper-functions";
 import NavLinks from "./nav-links";
@@ -32,14 +31,14 @@ export const NavBar = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={ styles.container }>
       <Link href="/">
 
-        <Image src={MedusaLogo} alt="logo" />
+        <Image src={ `../../public/BurgerHat.PNG` } alt="logo" />
 
       </Link>
-      <div className={styles.navBtnContainer}>
-        <div className={styles.navLinks}>
+      <div className={ styles.navBtnContainer }>
+        <div className={ styles.navLinks }>
           <NavLinks></NavLinks>
         </div>
         {/* {navbar ? (
@@ -50,21 +49,21 @@ export const NavBar = () => {
         <div className={styles.hamburgurBtn} onClick={() => handleHamburgur()}>
           <FaHamburger></FaHamburger>
         </div> */}
-        {!isCheckout ? (
+        { !isCheckout ? (
           <>
             <button
-              className={styles.btn}
-              onClick={() => updateCartViewDisplay()}
+              className={ styles.btn }
+              onClick={ () => updateCartViewDisplay() }
             >
-              <BiShoppingBag />{" "}
+              <BiShoppingBag />{ " " }
               <span>
-                {cart.items.length > 0
+                { cart.items.length > 0
                   ? cart.items.map(quantity).reduce(sum)
-                  : 0}
+                  : 0 }
               </span>
             </button>
           </>
-        ) : null}
+        ) : null }
       </div>
     </div>
   );

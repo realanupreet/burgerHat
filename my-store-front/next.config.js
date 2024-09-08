@@ -14,4 +14,5 @@ module.exports = {
     ],
   },
   trailingSlash: true,
+  assetPrefix: "./burgerHat/my-store-front",
 };
