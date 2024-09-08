@@ -1,6 +1,6 @@
 module.exports = {
   basePath: '/burgerHat', 
-  assetPrefix: '/burgerHat/', 
+  assetPrefix: '/burgerHat', 
   output: 'export',
   reactStrictMode: true,
   images: {
