@@ -2,9 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import StoreContext from "../context/store-context";
-import MedusaLogo from "../public/BurgerHat.PNG";
-import Banner from "../public/banner.SVG";
-import BurgerHands from "../public/burgerbanner.PNG";
 import styles from "../styles/landing-page.module.css";
 import store from "../styles/store.module.css";
 import footer from "../styles/footer.module.css";
@@ -20,12 +17,12 @@ export default function Home({ products }) {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div className={styles.logo}>
-            <Image src={Banner} className={styles.logo} alt="banner" ></Image>
+            <Image src={`../public/banner.SVG`} className={styles.logo} alt="banner" ></Image>
           </div>
 
           <p>The best burgers in town</p>
           <div className={styles.burgerhands}>
-            <Image src={BurgerHands}></Image>
+            <Image src={`../public/burgerbanner.PNG`}></Image>
           </div>
         </div>
 
@@ -80,7 +77,7 @@ export default function Home({ products }) {
           <div className={footer.column}>
             <Link href="/">
 
-              <Image src={MedusaLogo} alt="logo" />
+              <Image src={`../public/BurgerHat.PNG`} alt="logo" />
 
             </Link>
           </div>
