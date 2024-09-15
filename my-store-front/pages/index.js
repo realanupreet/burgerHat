@@ -77,7 +77,7 @@ export default function Home({ products }) {
           <div className={footer.column}>
             <Link href="/">
 
-              <Image src={`./BurgerHat.png`} alt="logo" />
+              <Image src={`/burgerHat/BurgerHat.png`} alt="logo" />
 
             </Link>
           </div>
