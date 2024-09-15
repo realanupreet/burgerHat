@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useRef } from "react"
 import { createClient } from "../utils/client"
 import { useStaticData } from "../hooks/useStaticData"
+import toast, { Toaster } from 'react-hot-toast';
 
 export const defaultStoreContext = {
   adding: false,
@@ -124,6 +125,11 @@ export const StoreProvider = ({ children }) => {
     // client.carts.lineItems.delete(state.cart.id, lineId).then((data) => {
     //   dispatch({ type: "setCart", payload: data.cart })
     // })
+    staticError();
+  }
+
+  const staticError = () => {
+    toast.error('Hi, this is the static version of the app these functionality dont work rightnow.');
   }
 
   const updateLineItem = async ({ lineId, quantity }) => {
@@ -132,6 +138,7 @@ export const StoreProvider = ({ children }) => {
     //   .then((data) => {
     //     dispatch({ type: "setCart", payload: data.cart })
     //   })
+    staticError();
   }
 
   const getShippingOptions = async () => {

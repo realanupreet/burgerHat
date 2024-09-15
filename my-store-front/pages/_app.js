@@ -3,6 +3,7 @@ import { StoreProvider } from "../context/store-context";
 import { DisplayProvider } from "../context/display-context";
 import "../styles/globals.css";
 import Layout from "../components/layout/layout";
+import toast, { Toaster } from 'react-hot-toast';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </DisplayProvider>
+      <Toaster />
     </StoreProvider>
   );
 }
