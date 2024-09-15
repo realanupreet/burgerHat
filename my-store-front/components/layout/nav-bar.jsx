@@ -34,7 +34,7 @@ export const NavBar = () => {
     <div className={ styles.container }>
       <Link href="/">
 
-        <Image src={ `./BurgerHat.PNG` } alt="logo" />
+        <Image src={ `./BurgerHat.png` } alt="logo" />
 
       </Link>
       <div className={ styles.navBtnContainer }>
