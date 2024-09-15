@@ -1,4 +1,5 @@
 module.exports = {
+  basePath: '/burgerHat', 
   output: 'export',
   reactStrictMode: true,
   images: {
