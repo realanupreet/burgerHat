@@ -1,5 +1,4 @@
 module.exports = {
-  basePath: '/', 
   output: 'export',
   reactStrictMode: true,
   images: {
@@ -14,5 +13,4 @@ module.exports = {
     ],
   },
   trailingSlash: true,
-  assetPrefix: "./",
 };
