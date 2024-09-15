@@ -17,12 +17,12 @@ export default function Home({ products }) {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div className={styles.logo}>
-            <Image src={`../public/banner.SVG`} className={styles.logo} alt="banner" ></Image>
+            <Image src={`./banner.SVG`} className={styles.logo} alt="banner" ></Image>
           </div>
 
           <p>The best burgers in town</p>
           <div className={styles.burgerhands}>
-            <Image src={`../public/burgerbanner.PNG`}></Image>
+            <Image src={`./burgerbanner.PNG`}></Image>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export default function Home({ products }) {
           <div className={footer.column}>
             <Link href="/">
 
-              <Image src={`../public/BurgerHat.PNG`} alt="logo" />
+              <Image src={`./BurgerHat.PNG`} alt="logo" />
 
             </Link>
           </div>
