@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: '/burgerHat/my-store-front', 
+  basePath: '/my-store-front', 
   output: 'export',
   reactStrictMode: true,
   images: {
