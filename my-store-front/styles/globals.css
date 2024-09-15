@@ -49,7 +49,7 @@ body {
       #f06b0600 50%
     ),
     linear-gradient(to top, #201011 65%, #201011 60%, rgba(255, 255, 255, 0)),
-    url("burgerHat/bg.png");
+    url("/burgerHat/bg.png");
 }
 
 a {
